@@ -3,7 +3,7 @@
 This is almost an exact copy of the JavaTicTacToe, only in python, i did this to learn python a little better and then do some more difficult tasks with it.
 
 #### main.py
-This class comunicates with the other classes and is the core of the application
+This class communicates with the other classes and is the core of the application
 
 
 #### starting_infos.py
