@@ -36,7 +36,7 @@ class Main:
 
                 IsGameOver = go.overCheck(boardList)
 
-                if IsGameOver == 'X Won' or IsGameOver == 'O Won':
+                if IsGameOver:
                     cB.printBoard()
                     print('\n')
                     print(IsGameOver)

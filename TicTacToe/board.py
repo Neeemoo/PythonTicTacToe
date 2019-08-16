@@ -24,6 +24,7 @@ class Board:
 
     # Creating the chars around the board to make it look nice (the dividers etc.)
     def printBoard(self):
+        print('\n')
         boardStr = ""
         for x in range(self.row):
             for y in range(self.col):
