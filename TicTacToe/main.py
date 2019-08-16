@@ -4,8 +4,8 @@ from player import Player
 from gameover import Gameover
 from AI import AI
 
-class Main:
 
+class Main:
     if __name__ == "__main__":
         infos = StartingInfos()
         p1 = Player()
@@ -16,24 +16,32 @@ class Main:
         infos.info()
         infos.instructions()
 
-        boardList = cB.createBoard()
-
-        isPlayerTurn = True
-
         while True:
-            cB.boardShowcase()
-            cB.printBoard()
+            boardList = cB.createBoard()
 
-            if isPlayerTurn:
-                p1.playerTurn(boardList)
-                isPlayerTurn = False
+            anotherGame = "yes"
+            isPlayerTurn = True
 
-            elif not isPlayerTurn:
-                ai.aiTurn(boardList)
-                isPlayerTurn = True
-
-            IsGameOver = go.overCheck(boardList)
-
-            if IsGameOver:
+            while True:
+                cB.boardShowcase()
                 cB.printBoard()
+
+                if isPlayerTurn:
+                    p1.playerTurn(boardList)
+                    isPlayerTurn = False
+
+                elif not isPlayerTurn:
+                    ai.aiTurn(boardList)
+                    isPlayerTurn = True
+
+                IsGameOver = go.overCheck(boardList)
+
+                if IsGameOver == 'X Won' or IsGameOver == 'O Won':
+                    cB.printBoard()
+                    print('\n')
+                    print(IsGameOver)
+                    anotherGame = input("Do you want to play another round? y/n ")
+                    break
+
+            if anotherGame.lower() != "y" and anotherGame.lower() != "yes" and anotherGame != "":
                 break
